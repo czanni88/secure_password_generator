@@ -96,7 +96,7 @@ export const generateRegularChars = (quantOfRegularChars) => {
 // Function to render the Secure Passwords to the user
 
 const securePasswordsContainer = document.querySelector(
-  '.GeneratedSecurePasswordsContainer'
+  '.generatedSecurePasswordsContainer'
 );
 
 export const renderSecurePasswords = (severalSecurePasswords) => {

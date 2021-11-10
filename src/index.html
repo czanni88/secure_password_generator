@@ -10,35 +10,37 @@
   <body>
     <h1>Secure Password Generator</h1>
     <main class="container">
-      <div class="securePasswordFormContainer">
-        <form action="" method="post" class="securePasswordForm">
+      <form action="" method="post" class="securePasswordForm">
+        <div class="formInput">
           <label for="minLength"
             >What is the minimum length desired for your password?</label
           >
-          <input
-            type="number"
-            name="minLength"
-            id="minLength"
-            placeholder="Input here"
-          />
+          <input type="number" name="minLength" id="minLength" value="0" />
+        </div>
+
+        <div class="formInput">
           <label for="specialCharacters"
-            >Your password should have how many "Special Characters"?</label
+            >How many "Special Characters" would you like?</label
           >
           <input
             type="number"
             name="specialCharacters"
             id="specialCharacters"
-            placeholder="Input here"
+            value="0"
           />
+        </div>
+        <div class="formInput">
           <label for="charactersAsNumber"
-            >Your password should have how many "Characters as Number"?</label
+            >How many "Characters as Number" would you like?</label
           >
           <input
             type="number"
             name="charactersAsNumber"
             id="charactersAsNumber"
-            placeholder="Input here"
+            value="0"
           />
+        </div>
+        <div class="formInput">
           <label for="quantityOfPasswords"
             >How may Secure Passwords would you like to generate?</label
           >
@@ -48,12 +50,12 @@
             id="quantityOfPasswords"
             value="1"
             min="1"
-            placeholder="Input here"
           />
-          <button type="submit">Generate Secure Password</button>
-        </form>
-      </div>
-      <div class="GeneratedSecurePasswordsContainer"></div>
+        </div>
+        <button type="submit">Generate Secure Password</button>
+      </form>
+
+      <div class="generatedSecurePasswordsContainer"></div>
     </main>
   </body>
 </html>
