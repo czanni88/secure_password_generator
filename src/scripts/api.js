@@ -2,12 +2,13 @@ import {
   generateSpecialChars,
   generateCharsAsNumber,
   generateRegularChars,
+  renderSecurePasswords,
 } from './functions';
 
-export function generateSecurePassword(e) {
+export function generateSecurePasswords(e) {
   e.preventDefault();
 
-  // Form Values
+  // Values from the form
 
   let minLengthInput = parseInt(e.target.minLength.value);
   let specialCharsInput = parseInt(e.target.specialCharacters.value);
@@ -19,17 +20,30 @@ export function generateSecurePassword(e) {
       minLengthInput - (specialCharsInput + charsAsNumberInput);
   }
 
-  generateSpecialChars(specialCharsInput);
+  let severalSecurePasswords = [];
 
-  let randomSpecialChars = generateSpecialChars(specialCharsInput);
+  for (let i = 0; i < quantOfPasswordsInput; i++) {
+    // Each function generate one array of random characters of the same type
 
-  generateCharsAsNumber(charsAsNumberInput);
+    let randomSpecialChars = generateSpecialChars(specialCharsInput);
 
-  let randomCharsAsNumber = generateCharsAsNumber(charsAsNumberInput);
+    let randomCharsAsNumber = generateCharsAsNumber(charsAsNumberInput);
 
-  generateRegularChars(quantOfRegularChars);
+    let randomRegularChars = generateRegularChars(quantOfRegularChars);
 
-  let randomRegularChars = generateRegularChars(quantOfRegularChars);
+    let singleSecurePassword = [
+      ...randomCharsAsNumber,
+      ...randomSpecialChars,
+      ...randomRegularChars,
+    ].join('');
 
-  console.log(randomSpecialChars, randomCharsAsNumber, randomRegularChars);
+    severalSecurePasswords.push(singleSecurePassword);
+  }
+
+  console.log(severalSecurePasswords);
+
+  // Function to render the Secure Passwords to the user
+  renderSecurePasswords(severalSecurePasswords);
+
+  return severalSecurePasswords;
 }

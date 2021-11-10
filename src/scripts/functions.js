@@ -56,6 +56,8 @@ const charsDataBase = {
   specialChars: ['!', '§', '$', '%', '&', '/', '(', ')', '=', '?', 'ß'],
 };
 
+// Each function generate one array of random characters of the same type
+
 export const generateSpecialChars = (specialCharsInput) => {
   let arrOfSpecialChars = [];
 
@@ -89,4 +91,22 @@ export const generateRegularChars = (quantOfRegularChars) => {
     );
   }
   return arrOfRegularChars;
+};
+
+// Function to render the Secure Passwords to the user
+
+const securePasswordsContainer = document.querySelector(
+  '.GeneratedSecurePasswordsContainer'
+);
+
+export const renderSecurePasswords = (severalSecurePasswords) => {
+  securePasswordsContainer.innerHTML = `<h2>Here ${
+    severalSecurePasswords.length > 1 ? 'are' : 'is'
+  } your Secure Password${
+    severalSecurePasswords.length > 1 ? 's' : ''
+  }</h2><ul class="passwordsList"></ul>`;
+  const passwordsList = document.querySelector('.passwordsList');
+  severalSecurePasswords.map((uniquePassword) => {
+    passwordsList.insertAdjacentHTML('beforeend', `<li>${uniquePassword}</li>`);
+  });
 };
