@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Secure Passsword Generator</title>
+    <title>Secure Password Generator</title>
   </head>
 
   <body>
-    <h1>Secure Passsword Generator</h1>
+    <h1>Secure Password Generator</h1>
     <main class="container">
-      <div class="securePasswordForm">
-        <form action="" method="post">
+      <div class="securePasswordFormContainer">
+        <form action="" method="post" class="securePasswordForm">
           <label for="minLength"
             >What is the minimum length desired for your password?</label
           >
           <input
             type="number"
-            name="securePasswordMinLength"
+            name="minLength"
             id="minLength"
             placeholder="Input here"
           />
@@ -26,7 +26,7 @@
           >
           <input
             type="number"
-            name="securePasswordSpecialCharacters"
+            name="specialCharacters"
             id="specialCharacters"
             placeholder="Input here"
           />
@@ -35,7 +35,7 @@
           >
           <input
             type="number"
-            name="securePasswordCharactersAsNumber"
+            name="charactersAsNumber"
             id="charactersAsNumber"
             placeholder="Input here"
           />
@@ -44,18 +44,14 @@
           >
           <input
             type="number"
-            name="securePasswordQuantityOfPasswords"
+            name="quantityOfPasswords"
             id="quantityOfPasswords"
             placeholder="Input here"
           />
+          <button type="submit">Generate Secure Password</button>
         </form>
-        <button type="submit">Generate Secure Password</button>
       </div>
-      <div class="securePasswordsContainer">
-        <ul>
-          <!-- Secure Passwords to be inserted here by DOM manipulation -->
-        </ul>
-      </div>
+      <div class="GeneratedSecurePasswordsContainer"></div>
     </main>
   </body>
 </html>

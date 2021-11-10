@@ -1,8 +1,7 @@
-//Standalone runtime for Regenerator-compiled generator and async functions.
-require("regenerator-runtime/runtime");
-// The following line makes sure your styles are included in the project. Don't remove this.
+require('regenerator-runtime/runtime');
 import '../styles/main.scss';
-// Import any additional modules you want to include below \/
+import { generateSecurePassword } from './functions';
 
+const form = document.querySelector('.securePasswordForm');
 
-// \/ All of your javascript should go here \/
+form.addEventListener('submit', generateSecurePassword);
