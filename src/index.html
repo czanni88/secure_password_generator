@@ -10,44 +10,47 @@
   <body>
     <h1>Secure Passsword Generator</h1>
     <main class="container">
-      <form action="" method="post" class="securePasswordForm">
-        <label for="minLength"
-          >What is the minimum length desired for your password?</label
-        >
-        <input
-          type="number"
-          name="securePasswordMinLength"
-          id="minLength"
-          placeholder="Input here"
-        />
-        <label for="specialCharacters"
-          >Should it have how many "Special characters"?</label
-        >
-        <input
-          type="number"
-          name="securePasswordSpecialCharacters"
-          id="specialCharacters"
-          placeholder="Input here"
-        />
-        <label for="charactersAsNumber"
-          >Should it have how many "Characters as Number"?</label
-        >
-        <input
-          type="number"
-          name="securePasswordCharactersAsNumber"
-          id="charactersAsNumber"
-          placeholder="Input here"
-        />
-        <label for="quantityOfPasswords"
-          >How may Secure Passwords would you like to generate?</label
-        >
-        <input
-          type="number"
-          name="securePasswordQuantityOfPasswords"
-          id="quantityOfPasswords"
-          placeholder="Input here"
-        />
-      </form>
+      <div class="securePasswordForm">
+        <form action="" method="post">
+          <label for="minLength"
+            >What is the minimum length desired for your password?</label
+          >
+          <input
+            type="number"
+            name="securePasswordMinLength"
+            id="minLength"
+            placeholder="Input here"
+          />
+          <label for="specialCharacters"
+            >Should it have how many "Special characters"?</label
+          >
+          <input
+            type="number"
+            name="securePasswordSpecialCharacters"
+            id="specialCharacters"
+            placeholder="Input here"
+          />
+          <label for="charactersAsNumber"
+            >Should it have how many "Characters as Number"?</label
+          >
+          <input
+            type="number"
+            name="securePasswordCharactersAsNumber"
+            id="charactersAsNumber"
+            placeholder="Input here"
+          />
+          <label for="quantityOfPasswords"
+            >How may Secure Passwords would you like to generate?</label
+          >
+          <input
+            type="number"
+            name="securePasswordQuantityOfPasswords"
+            id="quantityOfPasswords"
+            placeholder="Input here"
+          />
+        </form>
+        <button type="submit">Generate Secure Password</button>
+      </div>
       <div class="securePasswordsContainer">
         <ul>
           <!-- Secure Passwords to be inserted here by DOM manipulation -->
